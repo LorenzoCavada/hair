@@ -57,34 +57,29 @@
 			<main class="main-content">
 				<div class="page">
 					<div class="container">
-						<p>Customers are for us the most valuable resource, expecially your feedback is really important for us. Feel free to send us a message in any moment, we will be happy to answer you as soon as possible. </p>
+						<p>Customers are for us the most valuable resource, every feedback is really important for us. Feel free to send us a message in any moment, we will be happy to answer you as soon as possible. </p>
 
 						<div class="row">
-							<div class="col-md-5">
+							<div class="col-12">
 								<form action="#" class="contact-form" id="contactForm">
-									<input type="text" id="name" placeholder="Name...">
-									<input type="text" id="email" placeholder="Email...">
+									<div class="row">
+										<div class="col-md-6"><input type="text" id="name" placeholder="Name..."></div>
+										<div class="col-md-6"><input type="text" id="email" placeholder="Email..."></div>
+									</div>
+									
 									<textarea name="" id="message" placeholder="Message..."></textarea>
 									<div class="text-right">
 										<button class="button large" type="submit">Send Message</button>
 									</div>
 								</form>
 							</div>
-							<div class="col-md-6 col-md-offset-1">
-								<div class="map-container">
-									<div class="map"></div>
-									<div class="address-info">
-										<address>
-											<img src="icon/icon-map-small.png" class="icon">
-											<p><strong>HaiR</strong> Based in Trento, Italy</p>
-										</address>
-										<div class="contact-info">
-											<a href="mailto:h" class="mail"><img src="icon/icon-envelope-small.png" class="icon">contact@companyname.com</a>
-											<a href="tel:(500)942042259" class="phone"><img src="icon/icon-phone-small.png" class="icon">(500)942042259</a>
-										</div>
-									</div>
-								</div>
+						</div>
+						<div class="row d-none" id="result_message" ">
+							<div class="col-12 col-md-4"></div>
+							<div class="col-12 col-md-4">
+								<p>Thanks for your collaboration!</p>
 							</div>
+							<div class="col-12 col-md-4"></div>
 						</div>
 					</div>
 				</div>
@@ -102,12 +97,12 @@
 										<img src="icon/icon-map-small.png" class="icon">
 										<p><strong>HaiR</strong> Trento</p>
 									</address>
-									<a href="mailto:contact@companyname.com" class="mail"><img src="icon/icon-envelope-small.png" class="icon">lorenzo.cavada@studenti.unitn.it</a>
-									<a href="mailto:contact@companyname.com" class="mail"><img src="icon/icon-envelope-small.png" class="icon">remi.chierchia@studenti.unitn.it</a>
-									<a href="mailto:contact@companyname.com" class="mail"><img src="icon/icon-envelope-small.png" class="icon">adam.orosz@studenti.unitn.it</a>
-									<a href="mailto:contact@companyname.com" class="mail"><img src="icon/icon-envelope-small.png" class="icon">olga.iasson@studenti.unitn.it</a>
-									<a href="mailto:contact@companyname.com" class="mail"><img src="icon/icon-envelope-small.png" class="icon">lucrezia.tosato@studenti.unitn.it</a>
-									<a href="mailto:contact@companyname.com" class="mail"><img src="icon/icon-envelope-small.png" class="icon">iwona.podsiadlo@unitn.it</a>
+									<a href="mailto:lorenzo.cavada@studenti.unitn.it" class="mail"><img src="icon/icon-envelope-small.png" class="icon">Lorenzo Cavada</a>
+									<a href="mailto:remi.chierchia@studenti.unitn.it" class="mail"><img src="icon/icon-envelope-small.png" class="icon">Remi Chierchia</a>
+									<a href="mailto:adam.orosz@studenti.unitn.it" class="mail"><img src="icon/icon-envelope-small.png" class="icon">Adam Orosz</a>
+									<a href="mailto:olga.iasson@studenti.unitn.it" class="mail"><img src="icon/icon-envelope-small.png" class="icon">Olga Iasson</a>
+									<a href="mailto:lucrezia.tosato@studenti.unitn.it" class="mail"><img src="icon/icon-envelope-small.png" class="icon">Lucrezia Tosato</a>
+									<a href="mailto:iwona.podsiadlo@unitn.it" class="mail"><img src="icon/icon-envelope-small.png" class="icon">Iwona Podsiadlo</a>
 								</div>
 							</div>
 						</div>
@@ -149,8 +144,7 @@
 		<!-- The core Firebase JS SDK is always required and must be listed first -->
 		<script src="https://www.gstatic.com/firebasejs/8.4.1/firebase-app.js"></script>
 
-		<!-- TODO: Add SDKs for Firebase products that you want to use
-				https://firebase.google.com/docs/web/setup#available-libraries -->
+		<!-- USEFUL SCRIPT -->
 		<script src="https://www.gstatic.com/firebasejs/8.4.1/firebase-analytics.js"></script>
 
 		<script src="https://www.gstatic.com/firebasejs/8.4.1/firebase-database.js"></script>
@@ -161,6 +155,7 @@
 			var firebaseConfig = {
 				apiKey: "AIzaSyDy0b98Ab-bJGWt-HQf4BaWbaUmktfFr4w",
 				authDomain: "hair-bc2c2.firebaseapp.com",
+				databaseURL: "https://hair-bc2c2-default-rtdb.europe-west1.firebasedatabase.app",
 				projectId: "hair-bc2c2",
 				storageBucket: "hair-bc2c2.appspot.com",
 				messagingSenderId: "468369288913",
@@ -185,6 +180,7 @@
 					email: element("email"),
 					message: element("message")
 				})
+				$(document.getElementById("result_message")).removeClass("d-none")
 			});
 
 		</script>
