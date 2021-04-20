@@ -218,7 +218,9 @@ form input:not([type="submit"]), form textarea { padding: 20px 20px; background:
 .prices { list-style: none; padding-left: 0; }
 .prices li { padding: 15px 0; border-bottom: 1px solid #3a353a; font-family: "Novecento Sans", "Open Sans", sans-serif; text-transform: uppercase; font-size: 14px; font-size: 0.875rem; }
 .prices li:first-child { border-top: 1px solid #3a353a; }
-.prices li .price { float: right; font-size: 30px; font-size: 1.875rem; font-weight: 600; background-image: -webkit-linear-gradient(90deg, #cc7250, #f7d0c2); -webkit-background-clip: text; -webkit-text-fill-color: transparent; position: relative; margin-top: -12px; }
+.prices li .free-price { float: right; font-size: 1.8em; font-weight: 600; background-image: -webkit-linear-gradient(90deg, #69cc50, #f7d0c2); -webkit-background-clip: text; -webkit-text-fill-color: transparent; position: relative; margin: -1%; }
+.prices li .premium-price { float: right; font-size: 1.8em; font-weight: 600; background-image: -webkit-linear-gradient(90deg, #69cc50, #f7d0c2); -webkit-background-clip: text; -webkit-text-fill-color: transparent; position: relative; margin: -1%; }
+
 
 /* IMAGE LIGHTBOX SELECTOR */
 #imagelightbox { cursor: pointer; position: fixed; z-index: 10000; -ms-touch-action: none; touch-action: none; /* 50 */ box-shadow: 0 0 3.125em rgba(0, 0, 0, 0.75); /* 50 */ }
