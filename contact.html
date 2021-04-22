@@ -63,20 +63,20 @@
 								<form action="#" class="contact-form" id="contactForm">
 									<div class="row">
 										<div class="col-md-6"><input type="text" id="name" placeholder="Name..."></div>
-										<div class="col-md-6"><input type="text" id="email" placeholder="Email..."></div>
+										<div class="col-md-6"><input type="email" id="email" placeholder="Email..."></div>
 									</div>
 									
-									<textarea name="" id="message" placeholder="Message..."></textarea>
+									<textarea name="" id="message" placeholder="Message..." required></textarea>
 									<div class="text-right">
 										<button class="button large" type="submit">Send Message</button>
 									</div>
 								</form>
 							</div>
 						</div>
-						<div class="row d-none" id="result_message" ">
+						<div class="row hide-message" id="result_message">
 							<div class="col-12 col-md-4"></div>
 							<div class="col-12 col-md-4">
-								<p>Thanks for your collaboration!</p>
+								<p>Your message has been submitted, thanks for your collaboration!</p>
 							</div>
 							<div class="col-12 col-md-4"></div>
 						</div>
@@ -179,7 +179,10 @@
 					email: element("email"),
 					message: element("message")
 				})
-				$(document.getElementById("result_message")).removeClass("d-none")
+				$(document.getElementById("result_message")).removeClass("hide-message")
+				$(document.getElementById("name")).val("")
+				$(document.getElementById("email")).val("")
+				$(document.getElementById("message")).val("")
 			});
 
 		</script>
