@@ -703,4 +703,4 @@ img { max-width: 100%; }
 
 .hide-message{display: none;}
 .form-message{text-align: center; font-size: 2em}
-
+.d-none{display: none;}

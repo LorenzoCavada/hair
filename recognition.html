@@ -24,7 +24,7 @@
 
 	<body>
 
-		<div id="site-content"  style="height: 100vh;">
+		<div id="site-content">
 			
 			<header class="site-header">
 				<div class="container">
@@ -88,8 +88,9 @@
 							</div>
 						</div>
 						<div class="row">
-							<div class="col-12" style="text-align: center; margin-top: 2em;">
-								<a href="recognition.html" class="button large">Upload <i class="fas fa-cloud-upload-alt"></i></a>
+							<div class="col-12" style="text-align: center; margin-top: 2em;">									
+								<input type="file" accept="image/*" class="d-none" capture="camera" id="cameraInput"></button>
+								<label for="cameraInput" class="button large">Upload <i class="fas fa-cloud-upload-alt"></i></label>							
 							</div>
 						</div>
 				  </div>
@@ -148,17 +149,15 @@
 		
 
 		<script src="js/jquery-1.11.1.min.js"></script>
-		<script src="http://maps.google.com/maps/api/js?sensor=false&amp;language=en"></script>
 		<script src="js/plugins.js"></script>
 		<script src="js/app.js"></script>
-
 		<!-- The core Firebase JS SDK is always required and must be listed first -->
 		<script src="https://www.gstatic.com/firebasejs/8.4.1/firebase-app.js"></script>
+		<script src="https://www.gstatic.com/firebasejs/8.4.1/firebase-storage.js"></script>
 
 		<!-- USEFUL SCRIPT -->
 		<script src="https://www.gstatic.com/firebasejs/8.4.1/firebase-analytics.js"></script>
 
-		<script src="https://www.gstatic.com/firebasejs/8.4.1/firebase-database.js"></script>
 
 		<script>
 			// Your web app's Firebase configuration
@@ -178,21 +177,24 @@
 			firebase.analytics();
 		</script>
 
-
 		<script>
-			var messagesRefs = firebase.database().ref('messages')
+			const fileChosen = document.getElementById('file-chosen');
 
-			document.getElementById("contactForm").addEventListener('submit', (e) =>{
-				e.preventDefault();
-				// var element = (id) => {return document.getElementById(id).value};
-				// var newMessageRef = messagesRefs.push();
-				// newMessageRef.set({
-				// 	name: element("name"),
-				// 	email: element("email"),
-				// 	message: element("message")
-				// })
-				$(document.getElementById("result_message")).removeClass("d-none")
-			});
+			cameraInput.addEventListener('change', function(){
+  			const ref = firebase.storage().ref()
+				const file = document.querySelector("#cameraInput").files[0]
+				const name = new Date() + '-' + file.name
+				const metadata = {
+					contentType: file.type
+				}
+				const task = ref.child(name).put(file,metadata)
+
+				task.
+				then(() => {
+					console.log("image uploaded")
+					alert("image uploaded")
+				})
+			})
 
 		</script>
 	</body>
