@@ -200,21 +200,21 @@
 								<div class="team">
 									<figure class="team-image"><img src="images/team/lorenzo_cavada.jpg"></figure>
 									<h3 class="team-name">Lorenzo Cavada</h3>
-									<p>Hi. I'm Lorenzo Cavada I'm an ICT student. I work on the technical side of the project.</p>
+									<p>Hi. I'm Lorenzo Cavada I'm an ICT student. I work on the website of the project.</p>
 								</div>
 							</div>
 							<div class="col-md-4">
 								<div class="team">
 									<figure class="team-image"><img src="images/team/olga_iasson.jpeg"></figure>
 									<h3 class="team-name">Olga Iasson</h3>
-									<p>Hi, I'm Olga Iasson</p>
+									<p>Hi, I'm Olga Iasson I'm studying Economics and Business Law. I cooperate with the team especially as regards the economic side of the project.</p>
 								</div>
 							</div>
 							<div class="col-md-4">
 								<div class="team">
 									<figure class="team-image"><img src="images/team/lucrezia_tosato.jpeg"></figure>
 									<h3 class="team-name">Lucrezia Tosato</h3>
-									<p>Hi, I'm Lucrezia Tosato</p>
+									<p>Hi. I'm Lucrezia Tosato I'm an ICT student with a specialisation in advance image understanding. I am the coordinator and editing manager.</p>
 								</div>
 							</div>
 						</div> <!-- .row -->
@@ -223,7 +223,7 @@
 								<div class="team">
 									<figure class="team-image"><img src="images/team/remi_chierchia.jpeg"></figure>
 									<h3 class="team-name">Remi' Chierchia</h3>
-									<p>Hi, I'm Remì Chierchia</p>
+									<p>Hi, I'm Remì Chierchia, I'm studying Visual Computing Communication. I cooperate in the general development of the project till now.</p>
 								</div>
 							</div>
 							<div class="col-md-4">
@@ -237,7 +237,7 @@
 								<div class="team">
 									<figure class="team-image"><img src="images/team/iwona_podsiadlo.jpeg"></figure>
 									<h3 class="team-name">Iwona Podsiadlo</h3>
-									<p>Hi, I'm Iwona Podsiadlo<p>
+									<p>Hi I am Iwona Podsiadlo, I am PhD student at the Remote sensing Laboratory, University of Trento. I am responsible for your Hair image processing and AI.<p>
 								</div>
 							</div>
 						</div>
@@ -279,10 +279,11 @@
 							<div class="widget">
 								<h3 class="widget-title">Newsletter</h3>
 								<p>Don't lose any news! We will use your email only for contact you about our service.</p>
-								<form action="#" class="subscribe-form">
-									<input type="email" placeholder="Enter our email...">
+								<form action="#" id="newsletter-form" class="subscribe-form">
+									<input type="email" id="newsletter-email" placeholder="Enter our email...">
 									<input type="submit" value="Sign up">
 								</form>
+								<p style="text-align: center; margin-top: 2em; font-size: 1.4em; color: #cc7250" id="newsletter-result" class="d-none">Thank you!</p>
 							</div>
 						</div>
 					</div>
@@ -300,7 +301,48 @@
 		<script src="js/jquery-1.11.1.min.js"></script>
 		<script src="js/plugins.js"></script>
 		<script src="js/app.js"></script>
+
+		<!-- The core Firebase JS SDK is always required and must be listed first -->
+		<script src="https://www.gstatic.com/firebasejs/8.4.1/firebase-app.js"></script>
+		<!-- USEFUL SCRIPT -->
+		<script src="https://www.gstatic.com/firebasejs/8.4.1/firebase-analytics.js"></script>
+		<script src="https://www.gstatic.com/firebasejs/8.4.1/firebase-database.js"></script>
+		<script>
+			// Your web app's Firebase configuration
+			// For Firebase JS SDK v7.20.0 and later, measurementId is optional
+			var firebaseConfig = {
+				apiKey: "AIzaSyDy0b98Ab-bJGWt-HQf4BaWbaUmktfFr4w",
+				authDomain: "hair-bc2c2.firebaseapp.com",
+				databaseURL: "https://hair-bc2c2-default-rtdb.europe-west1.firebasedatabase.app",
+				projectId: "hair-bc2c2",
+				storageBucket: "hair-bc2c2.appspot.com",
+				messagingSenderId: "468369288913",
+				appId: "1:468369288913:web:31fc5b12026e4610629ff0",
+				measurementId: "G-P0DKYWRKNK"
+			};
+			// Initialize Firebase
+			firebase.initializeApp(firebaseConfig);
+			firebase.analytics();
+		</script>
+
+		<!--NEWSLETTER SCRIPT-->
+		<script>
+			var messagesRefs = firebase.database().ref('newsletter')
+
+			document.getElementById("newsletter-form").addEventListener('submit', (e) =>{
+				e.preventDefault();
+				var element = (id) => {return document.getElementById(id).value};
+				var newMessageRef = messagesRefs.push();
+				newMessageRef.set({
+					email: element("newsletter-email"),
+				})
+				$("#newsletter-email").val("")
+				$("#newsletter-result").removeClass("d-none")
+			});
+		</script>
 		
 	</body>
+
+	
 
 </html>

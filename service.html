@@ -172,7 +172,7 @@
 								<div class="contact-info">
 									<address>
 										<img src="icon/icon-map-small.png" class="icon">
-										<p><strong>HaiR</strong> Trento</p>
+										<p><strong>HaiR</strong>, Trento</p>
 									</address>
 									<a href="mailto:lorenzo.cavada@studenti.unitn.it" class="mail"><img src="icon/icon-envelope-small.png" class="icon">Lorenzo Cavada</a>
 									<a href="mailto:remi.chierchia@studenti.unitn.it" class="mail"><img src="icon/icon-envelope-small.png" class="icon">Remì Chierchia</a>
@@ -195,10 +195,11 @@
 							<div class="widget">
 								<h3 class="widget-title">Newsletter</h3>
 								<p>Don't lose any news! We will use your email only for contact you about our service.</p>
-								<form action="#" class="subscribe-form">
-									<input type="email" placeholder="Enter our email...">
+								<form action="#" id="newsletter-form" class="subscribe-form">
+									<input type="email" id="newsletter-email" placeholder="Enter our email...">
 									<input type="submit" value="Sign up">
 								</form>
+								<p style="text-align: center; margin-top: 2em; font-size: 1.4em; color: #cc7250" id="newsletter-result" class="d-none">Thank you!</p>
 							</div>
 						</div>
 					</div>
@@ -213,5 +214,44 @@
 		<script src="js/jquery-1.11.1.min.js"></script>
 		<script src="js/plugins.js"></script>
 		<script src="js/app.js"></script>
+
+		<!-- The core Firebase JS SDK is always required and must be listed first -->
+		<script src="https://www.gstatic.com/firebasejs/8.4.1/firebase-app.js"></script>
+		<!-- USEFUL SCRIPT -->
+		<script src="https://www.gstatic.com/firebasejs/8.4.1/firebase-analytics.js"></script>
+		<script src="https://www.gstatic.com/firebasejs/8.4.1/firebase-database.js"></script>
+		<script>
+			// Your web app's Firebase configuration
+			// For Firebase JS SDK v7.20.0 and later, measurementId is optional
+			var firebaseConfig = {
+				apiKey: "AIzaSyDy0b98Ab-bJGWt-HQf4BaWbaUmktfFr4w",
+				authDomain: "hair-bc2c2.firebaseapp.com",
+				databaseURL: "https://hair-bc2c2-default-rtdb.europe-west1.firebasedatabase.app",
+				projectId: "hair-bc2c2",
+				storageBucket: "hair-bc2c2.appspot.com",
+				messagingSenderId: "468369288913",
+				appId: "1:468369288913:web:31fc5b12026e4610629ff0",
+				measurementId: "G-P0DKYWRKNK"
+			};
+			// Initialize Firebase
+			firebase.initializeApp(firebaseConfig);
+			firebase.analytics();
+		</script>
+
+		<!--NEWSLETTER SCRIPT-->
+		<script>
+			var messagesRefs = firebase.database().ref('newsletter')
+
+			document.getElementById("newsletter-form").addEventListener('submit', (e) =>{
+				e.preventDefault();
+				var element = (id) => {return document.getElementById(id).value};
+				var newMessageRef = messagesRefs.push();
+				newMessageRef.set({
+					email: element("newsletter-email"),
+				})
+				$("#newsletter-email").val("")
+				$("#newsletter-result").removeClass("d-none")
+			});
+		</script>
 	</body>
 </html>
