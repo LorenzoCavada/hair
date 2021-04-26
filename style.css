@@ -704,3 +704,6 @@ img { max-width: 100%; }
 .hide-message{display: none;}
 .form-message{text-align: center; font-size: 2em}
 .d-none{display: none;}
+.link-contact-us {color: #cc7250}
+.link-contact-us:hover {font-weight: bold;}
+.justify {text-align: justify;}
