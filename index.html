@@ -330,13 +330,12 @@
 
 		<!--NEWSLETTER SCRIPT-->
 		<script>
-			var messagesRefs = firebase.database().ref('newsletter')
+			var newsletterRef = firebase.database().ref('newsletter')
 
 			document.getElementById("newsletter-form").addEventListener('submit', (e) =>{
 				e.preventDefault();
 				var element = (id) => {return document.getElementById(id).value};
-				var newMessageRef = messagesRefs.push();
-				newMessageRef.set({
+				newsletterRef.push().set({
 					email: element("newsletter-email"),
 				})
 				$("#newsletter-email").val("")

@@ -220,15 +220,15 @@
 
 		</script>
 		<script>
-			var messagesRefs = firebase.database().ref('subscribeForm')
+			var subscribeRef = firebase.database().ref('subscribeForm')
 
 			document.getElementById("adviseme").addEventListener('submit', (e) =>{
 				e.preventDefault();
 				var element = (id) => {return document.getElementById(id).value};
-				var newMessageRef = messagesRefs.push();
-				newMessageRef.set({
+				subscribeRef.push().set({
 					email: element("email"),
 				})
+				console.log("Email sended to subscribeForm")
 				$("#email").val("")
 				$("#result-advise").removeClass("d-none")
 				$("#adviseme").addClass("d-none")
@@ -238,13 +238,12 @@
 
 		<!--NEWSLETTER SCRIPT-->
 		<script>
-			var messagesRefs = firebase.database().ref('newsletter')
+			var newsletterRef = firebase.database().ref('newsletter')
 
 			document.getElementById("newsletter-form").addEventListener('submit', (e) =>{
 				e.preventDefault();
 				var element = (id) => {return document.getElementById(id).value};
-				var newMessageRef = messagesRefs.push();
-				newMessageRef.set({
+				newsletterRef.push().set({
 					email: element("newsletter-email"),
 				})
 				$("#newsletter-email").val("")
