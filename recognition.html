@@ -92,27 +92,95 @@
 								<input type="file" accept="image/*" class="d-none" capture="camera" id="cameraInput"></button>
 								<label for="cameraInput" class="button large">Upload <i class="fas fa-cloud-upload-alt"></i></label>							
 							</div>
-							<div class="col-12 d-none" id="error-message" style="text-align: center; margin-top: 8em;">		
+						
+						<div class="row d-none" style="margin-top: 8em;" id="product-1"><!--PRODUCT 1-->
+							<div class="col-12">		
+								<div class="feature">
+									<img class="product-image" src="images/product/product-1.png">		
+									<h3 class="feature-title" style="margin-top:-1em">RESULT: DRY HAIR</h3>
+									<div class="col-12 col-md-6 mx-auto">
+										<p style="text-align: center;">From our analysis seems like that you suffer from dry hair, one of the most common causes is the use of too strong shampoo! Based on our analysis the best product for you is:<span style="color: #cc7250"> Oribe Shampoo for Moisture and Control</span></p>							
+										<div class="price-list" style="margin-top: 3em;">
+											<h2 class="section-title">Get the best price</h2>
+											<ul class="prices" style="text-align: left;">
+												<li>SpaceNK <span style="font-size: 10px; color:#cc7250">BEST PRICE</span><span class="premium-price">48.50€<a target="_blank" href="https://bit.ly/3vTGp7W"><i style="margin-left: 5px;" class="fas fa-shopping-cart"></i></a></span></li>
+												<li>Oribe<span class="premium-price">51.00€<a target="_blank" href="https://bit.ly/2Suidus"><i style="margin-left: 5px;" class="fas fa-shopping-cart"></i></a></span></li>
+												<li>Niche-beauty<span class="premium-price">55.00€<a target="_blank" href="https://bit.ly/3hc2f2m"><i style="margin-left: 5px;" class="fas fa-shopping-cart"></i></a></span></li>
+											</ul>
+										</div>																									
+									</div>
+								</div>
+							</div>
+						</div><!--END PRODUCT 1-->
+
+						<div class="row d-none" style="margin-top: 8em;" id="product-2"><!--PRODUCT 2-->
+							<div class="col-12">
+								<div class="feature">
+									<img class="product-image" src="images/product/product-2.png">		
+									<h3 class="feature-title" style="margin-top:-1em">RESULT: ITCHY SCALP</h3>
+									<div class="col-12 col-md-6 mx-auto">
+										<p style="text-align: center;">From our analysis seems like that you suffer from itchy scalp, this is due to the use of a too strong shampoo! Based on our analysis the best product for you is:<span style="color: #cc7250"> LivSo Moisturizing Shampoo</span></p>							
+										<div class="price-list" style="margin-top: 3em;">
+											<h2 class="section-title">Get the best price</h2>
+											<ul class="prices" style="text-align: left;">
+												<li>DERMWAREHOUSE <span style="font-size: 10px; color:#cc7250">BEST PRICE</span><span class="premium-price">15.20€<a target="_blank" href="https://bit.ly/3etgI8u"><i style="margin-left: 5px;" class="fas fa-shopping-cart"></i></a></span></li>
+												<li>Livso<span class="premium-price">19.00€<a target="_blank" href="https://bit.ly/3vXU6D3"><i style="margin-left: 5px;" class="fas fa-shopping-cart"></i></a></span></li>
+												<li>Amazon<span class="premium-price">19.00€<a target="_blank" href="https://amzn.to/3tye7hC"><i style="margin-left: 5px;" class="fas fa-shopping-cart"></i></a></span></li>
+											</ul>
+										</div>																										
+									</div>
+								</div>
+							</div>
+						</div><!--END PRODUCT 2-->
+
+						<div class="row d-none" style="margin-top: 8em;" id="product-3"><!--PRODUCT 3-->
+							<div class="col-12">
+								<div class="feature">
+									<img class="product-image" src="images/product/product-3.png">		
+									<h3 class="feature-title" style="margin-top:-1em">RESULT: DANDRUFF</h3>
+									<div class="col-12 col-md-6 mx-auto">
+										<p style="text-align: center;">From our analysis seems like that you suffer from dandruff. Based on our analysis the best product for you is:<span style="color: #cc7250"> Phytosquam	Intense Exfoliating Treatment Shampoo</span></p>							
+										<div class="price-list" style="margin-top: 3em;">
+											<h2 class="section-title">Get the best price</h2>
+											<ul class="prices" style="text-align: left;">
+												<li>DERMWAREHOUSE <span style="font-size: 10px; color:#cc7250">BEST PRICE</span><span class="premium-price">22.10€<a target="_blank" href="https://bit.ly/3hcUnh7"><i style="margin-left: 5px;" class="fas fa-shopping-cart"></i></a></span></li>
+												<li>Phyto<span class="premium-price">24.00€<a target="_blank" href="https://bit.ly/3y1jnOj"><i style="margin-left: 5px;" class="fas fa-shopping-cart"></i></a></span></li>
+												<li>Amazon<span class="premium-price">26.00€<a target="_blank" href="https://amzn.to/2SskXZh"><i style="margin-left: 5px;" class="fas fa-shopping-cart"></i></a></span></li>
+											</ul>
+										</div>																								
+									</div>
+								</div>
+							</div>
+						</div><!--END PRODUCT 3-->
+
+
+						<div class="row d-none" id="price-drop"> <!--PRICE DROP EMAIL FORM-->
+							<div class="col-12 col-md-6 mx-auto">
+								<h2 class="section-title" style="font-size: 1.2em; margin-top: 3em;">Want to know if the price drop?</h2>
+								<form onsubmit="saveEmail(event, 'priceDropForm')" class="subscribe-form">
+									<input type="email" id="email" placeholder="Let me know!">
+									<input type="submit" value="Send">
+								</form>	
+								<p style="margin-top:2em; font-size: 1.4em; color: #cc7250" id="result-price-drop" class="d-none">Thank you!</p>	
+							</div>
+						</div><!--END PRICE DROP EMAIL FORM-->
+
+						<div class="row d-none" id="error-message" style="text-align: center; margin-top: 8em;">	<!--OUCH MESSAGE-->
+							<div class="col-12 col-md-6  mx-auto">	
 								<div class="feature">
 									<span class="feature-ico">
 										<i class="far fa-frown"></i>
 									</span>			
 									<h3 class="feature-title" style="margin-top:-1em">OUCH!</h3>
-									<div class="col-md-3"></div>
-									<div class="col-md-6">
-										<p>Oh sorry, seems like that we were not able to recognize your problem! Leave us your email. We will contact you as soon as we find the best product for you!</p>							
-										<form action="#" class="subscribe-form" id="adviseme">
-											<input type="email" id="email" placeholder="Let me know!">
-											<input type="submit" value="Send">
-										</form>	
-										<p style="margin-top:2em; font-size: 1.4em; color: #cc7250" id="result-advise" class="d-none">Thank you!</p>							
-																		
-									</div>
-									<div class="col-md-3"></div>
+									<p>Oh sorry, seems like that we were not able to recognize your problem! Leave us your email. We will contact you as soon as we find the best product for you!</p>							
+									<form onsubmit="saveEmail(event, 'productErrorForm')" class="subscribe-form" id="adviseme">
+										<input type="email" id="email" placeholder="Let me know!">
+										<input type="submit" value="Send">
+									</form>	
+									<p style="margin-top:2em; font-size: 1.4em; color: #cc7250" id="result-advise" class="d-none">Thank you!</p>							
 								</div>
-
 							</div>
-						</div>
+						</div><!--FINE OUCH MESSAGE-->
 				  </div>
         </div>
 			</main>
@@ -150,8 +218,8 @@
 							<div class="widget">
 								<h3 class="widget-title">Newsletter</h3>
 								<p>Don't lose any news! We will use your email only for contact you about our service.</p>
-								<form action="#" id="newsletter-form" class="subscribe-form">
-									<input type="email" id="newsletter-email" placeholder="Enter our email...">
+								<form onsubmit="saveEmail(event, 'newsletter')" id="newsletter-form" class="subscribe-form">
+									<input type="email" id="email" placeholder="Enter our email...">
 									<input type="submit" value="Sign up">
 								</form>
 								<p style="text-align: center; margin-top: 2em; font-size: 1.4em; color: #cc7250" id="newsletter-result" class="d-none">Thank you!</p>
@@ -225,42 +293,37 @@
 				task.
 				then(() => {
 					console.log("image uploaded")
-					$(document.getElementById("error-message")).removeClass("d-none")
+					var chose = Math.floor(Math.random() * 4) + 1
+					console.log(chose)
+					$('#error-message, #product-1, #product-2, #product-3, #price-drop').addClass("d-none")
+					if(chose == 4){
+						$('#error-message').removeClass("d-none")
+					}else{
+						$('#price-drop, #product-' + chose).removeClass("d-none")
+					}
 				})
 			})
 
 		</script>
-		<script>
-			var subscribeRef = firebase.database().ref('subscribeForm')
 
-			document.getElementById("adviseme").addEventListener('submit', (e) =>{
-				e.preventDefault();
-				var element = (id) => {return document.getElementById(id).value};
-				subscribeRef.push().set({
-					email: element("email"),
-				})
-				console.log("Email sended to subscribeForm")
-				$("#email").val("")
-				$("#result-advise").removeClass("d-none")
-				$("#adviseme").addClass("d-none")
-			});
+	<script>
+		function saveEmail(e, collection){
+			var priceDropRef = firebase.database().ref(collection)
+			e.preventDefault();
+			console.log(collection)
 
-		</script>
+			priceDropRef.push().set({
+				email: $("#" + e.target.id + " #email").val()
+			})
+			console.log("Email sended to "+ e.target.id)
+			$("#email").val("")
+			$("#result-price-drop").removeClass("d-none")
+			$("#price-drop").remove()
 
-		<!--NEWSLETTER SCRIPT-->
-		<script>
-			var newsletterRef = firebase.database().ref('newsletter')
+		}
 
-			document.getElementById("newsletter-form").addEventListener('submit', (e) =>{
-				e.preventDefault();
-				var element = (id) => {return document.getElementById(id).value};
-				newsletterRef.push().set({
-					email: element("newsletter-email"),
-				})
-				$("#newsletter-email").val("")
-				$("#newsletter-result").removeClass("d-none")
-			});
-		</script>
+	</script>
+
 
 	</body>
 
